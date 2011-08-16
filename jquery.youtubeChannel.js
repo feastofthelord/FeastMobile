@@ -1,6 +1,6 @@
 
 (function(){
-	$.fn.ytChannel = function(settings) {
+	$.fn.youtubeChannel = function(settings) {
 		var version = '0.1',
 			$ytEl = $(this),
 			$ytList = $('<ul/>',{class:'yt-channel-list'});
