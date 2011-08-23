@@ -1,5 +1,5 @@
 @charset "utf-8";
-.yt-channel-holder { font-size: 14px; }
+.yt-channel-holder { width: 300px; font-size: 14px; }
 .yt-channel-holder .yt-channel-list { background-color:  #000; list-style-position: outside; list-style-type: none; margin: 0; padding: 0; }
 .yt-channel-holder .yt-channel-list .yt-channel-title { background: #ccc url('yt-logo.png') scroll no-repeat 2px 2px; height: 16px; padding-left: 100px; padding-top: 14px; padding-bottom: 14px; line-height: 16px; font-size: 14px; font-weight: bold; text-align: center; color: #fff; }
 .yt-channel-holder .yt-channel-list .yt-channel-title a { text-decoration: none; color: #fff; }

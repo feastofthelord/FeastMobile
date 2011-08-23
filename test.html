@@ -8,13 +8,14 @@
 </head>
 <body>
 	<h1></h1>
-	<div id="youtube-channel" style="width:300px;"></div>
+	<div id="youtube-channel"></div>
 	<script>
 	$(function() {
 		$('#youtube-channel').youtubeChannel({
 			username: 'cmb79',
 			startIndex: 1,
-			maxResults: 5
+			maxResults: 10,
+			orderBy: 'viewCount'
 		});
 	});
 	</script>
