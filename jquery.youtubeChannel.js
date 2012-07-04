@@ -1,7 +1,7 @@
 
-;(function(){
+;(function($){
 	$.fn.youtubeChannel = function(settings) {
-		var version	= {major:0,minor:3,build:0},
+		var version	= {major:0,minor:4,build:5},
 			$ytEl	= $(this),
 			$ytList	= $('<ul/>',{class:'yt-channel-list'});
 			options	= $.extend({}, {username:'',query:'',startIndex:1,maxResults:10,orderBy:'published'}, settings),
@@ -12,7 +12,6 @@
 					return ['<a href="http://www.youtube.com/user/',options.username,'" target="_blank">',options.username,'</a>'].join('');
 				}
 				else if (options.query!=='') {
-					http://www.youtube.com/results?search_query=test%20query&aq=f
 					return ['<a href="http://www.youtube.com/results?',encodeURIComponent(options.query),'&aq=f" target="_blank">&quot;',options.query,'&quot;</a>'].join('');
 				}
 				else {
@@ -31,6 +30,7 @@
 				else if (options.query!=='') {
 					params.push('q='+encodeURIComponent(options.query));
 				}
+				params.push('callback=?');
 				return base+'?'+params.join('&');
 			},
 			parseTime	= function(secs) {
@@ -44,12 +44,14 @@
 		$ytList.appendTo($ytEl);
 		// parse the feed
 		$.getJSON(buildUrl(),function(data) {
+			var html, vid, e, length;
 			// add the header
 			$('<li/>',{class:'yt-channel-title'}).html(getTitle()).appendTo($ytList);
 			if (data.feed.entry) {
+				length = data.feed.entry.length;
 				// add the items
-				for (var i=0; i<data.feed.entry.length; i++) {
-					var html,vid,e = data.feed.entry[i];
+				for (var i=0; i<length; i++) {
+					e = data.feed.entry[i];
 					vid		= {
 						link:		(e ? e.media$group.media$player[0].url : ''),
 						title:		(e ? e.media$group.media$title.$t : ''),
