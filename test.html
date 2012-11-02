@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>YouTube Channel Plugin (jQuery)</title>
-	<link rel="stylesheet" href="jquery.youtubeChannel.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script src="jquery.youtubeChannel.js"></script>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="encoding" content="utf-8">
+    <title>YouTube Channel Plugin (jQuery)</title>
+    <link rel="stylesheet" href="jquery.youtubeChannel.css" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="jquery.youtubeChannel.js"></script>
 </head>
 <body>
-	<h1></h1>
-	<div id="youtube-channel"></div>
-	<script>
-	$(function() {
-		$('#youtube-channel').youtubeChannel({
-			username: 'channelfireball',
-			startIndex: 1,
-			maxResults: 10,
-			orderBy: 'published'
-		});
-	});
-	</script>
+    <h1></h1>
+    <div id="youtube-channel"></div>
+    <script>
+    $(function() {
+        $('#youtube-channel').youtubeChannel({
+            username: 'nettutsplus',
+            startIndex: 1,
+            maxResults: 60,
+            orderBy: 'published'
+        });
+    });
+    </script>
 </body>
 </html>
