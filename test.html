@@ -13,11 +13,26 @@
     <div id="youtube-channel"></div>
     <script>
     $(function() {
+        var count = 2;
         $('#youtube-channel').youtubeChannel({
             username: 'nettutsplus',
             startIndex: 1,
-            maxResults: 60,
-            orderBy: 'published'
+            maxResults: 10,
+            orderBy: 'published',
+            callback: function(api) {
+                // check if plugin failed to load any videos
+                if (!api.failed) {
+                    // log the number of videos loaded so far
+                    console.log('loaded ' + api.videoCount + ' videos');
+                    // execute two more loads asynchronously
+                    if (count--) {
+                        // add some delay, just because :)
+                        setTimeout(function() {
+                            api.loadMore(10);
+                        }, 1000);
+                    }
+                }
+            }
         });
     });
     </script>

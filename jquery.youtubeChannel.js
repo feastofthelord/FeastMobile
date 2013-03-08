@@ -1,5 +1,5 @@
 
-;(function($){
+;(function($,undef){
     $.fn.youtubeChannel = function(settings) {
             // this plugin's version
         var version         = {major:0,minor:5,build:10},
@@ -18,11 +18,18 @@
             // string to hold the html to be inserted
             listHtml        = '',
             // the plugin's options
-            options         = $.extend({}, {username:'',query:'',startIndex:1,maxResults:50,orderBy:'published'}, settings),
-            // the array of videos (currently not used...)
-            videos          = [],
+            options         = $.extend({}, {username:'',query:'',startIndex:1,maxResults:50,orderBy:'published',callback:function(){}}, settings),
             // the current offset (must start at 1)
-            resultOffset    = options.startIndex    = (options.startIndex < 1 ? 1 : options.startIndex);
+            resultOffset    = options.startIndex    = (options.startIndex < 1 ? 1 : options.startIndex),
+            /*  -- API OBJECT --  */
+            api = {
+                // failed to get videos?
+                failed: false,
+                // the array of videos
+                videos: [],
+                // number of videos
+                videoCount: 0
+            },
             /*  -- PLUGIN FUNCTIONS --  */
             // get the html for the header
             getTitle    = function() {
@@ -67,11 +74,13 @@
             },
             // add a video to the list
             addVideo    = function(vid) {
+                // change the id to be more html friendly
+                vid.htmlId = 'videoid-'+vid.id;
                 // add video data to the videos array
-                videos.push(vid);
+                api.videos.push(vid);
                 // return the styled HTML
                 return [
-                    '<li class="yt-channel-video">',
+                    '<li id="',vid.htmlId,'" class="yt-channel-video">',
                         '<a target="_blank" href="',vid.link,'">',
                             '<span class="thumb-wrap">',
                                 '<img class="vid-thumb" alt="',vid.title,'" src="',vid.thumb,'"/>',
@@ -96,6 +105,7 @@
                         e = data.feed.entry[i];
                         // add the video to the videos array and return the HTML for the list
                         listHtml += addVideo({
+                            id:         (e ? e.media$group.yt$videoid.$t : ''),
                             link:       (e ? e.media$group.media$player.url : ''),
                             title:      (e ? e.media$group.media$title.$t : ''),
                             thumb:      (e ? e.media$group.media$thumbnail[1].url : ''),
@@ -103,6 +113,7 @@
                             views:      (e && e.yt$statistics ? e.yt$statistics.viewCount : 0)
                         });
                         resultOffset++;
+                        api.videoCount++;
                     }
                     // check if we want to list more results
                     if (resultOffset < options.maxResults) {
@@ -111,34 +122,42 @@
                     } else {
                         // done retrieving videos, compile the HTML
                         outputHtml();
+                        // use callback, if set
+                        options.callback.apply(self, [api]);
                     }
                 } else {
                     // if no results were returned on the first call...
                     if (resultOffset === options.startIndex) {
+                        api.failed = true;
                         listHtml += '<li class="yt-channel-video"><a>NO RESULTS</a></li>';
                     }
                     // we're done here, compile the HTML
                     outputHtml();
+                    // use callback, if set
+                    options.callback.apply(self, [api]);
                 }
             },
             // output the final HTML
             outputHtml  = function() {
-                // append header
-                $ytHead.appendTo($ytList);
                 // append the list of videos
-                $ytHead.after(listHtml);
-                // append footer
-                $ytFoot.appendTo($ytList);
-                // display the list of videos
-                $ytList.appendTo($ytEl);
+                $ytFoot.before(listHtml);
             };
+        /*  -- API FUNCTIONS --  */
+        api.loadMore = function loadMore(num) {
+            // increase the maximum number of results
+            options.maxResults += parseInt(num, 10);
+            // make one more api call for more results
+            $.getJSON(buildUrl(),parseList);
+        };
         /*  -- PLUGIN MAIN CODE --  */
         // apply styling to the parent element
         $ytEl.addClass('yt-channel-holder');
-        // set the header
-        $ytHead = $('<li/>',{'class':'yt-channel-title'}).html(getTitle());
-        // set copyright notice
-        $ytFoot = $('<li/>',{'class':'yt-channel-copy'}).html('v'+getVersion()+' &copy; dharyk 2011');
+        // set the header and append it
+        $ytHead = $('<li/>',{'class':'yt-channel-title'}).html(getTitle()).appendTo($ytList);
+        // set copyright notice and append it
+        $ytFoot = $('<li/>',{'class':'yt-channel-copy'}).html('v'+getVersion()+' &copy; dharyk 2011').appendTo($ytList);
+        // display the list of videos
+        $ytList.appendTo($ytEl);
         // start querying the API
         $.getJSON(buildUrl(),parseList);
         // maintain jQuery chainability
