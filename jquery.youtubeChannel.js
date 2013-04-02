@@ -95,12 +95,12 @@
             },
             // parse the list of videos sent from the API
             parseList   = function(data) {
-                var vid, e, length;
+                var vid, e, feedlen;
                 // do we have videos to add?
                 if (data.feed.entry) {
-                    length = data.feed.entry.length;
+                    feedlen = data.feed.entry.length;
                     // parse each video returned
-                    for (var i=0; i<length; i++) {
+                    for (var i=0; i<feedlen; i++) {
                         // local cache of the video entry
                         e = data.feed.entry[i];
                         // add the video to the videos array and return the HTML for the list
@@ -141,6 +141,8 @@
             outputHtml  = function() {
                 // append the list of videos
                 $ytFoot.before(listHtml);
+                // clear the html string for further loadMore calls
+                listHtml = '';
             };
         /*  -- API FUNCTIONS --  */
         api.loadMore = function loadMore(num) {
