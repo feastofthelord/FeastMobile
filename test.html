@@ -12,9 +12,10 @@
     <h1></h1>
     <div id="youtube-channel"></div>
     <script>
+    var ytc;
     $(function() {
         var count = 2;
-        $('#youtube-channel').youtubeChannel({
+        ytc = $('#youtube-channel').youtubeChannel({
             username: 'nettutsplus',
             startIndex: 1,
             maxResults: 10,
@@ -34,6 +35,7 @@
                 }
             }
         });
+        console.log(ytc.api);
     });
     </script>
 </body>
