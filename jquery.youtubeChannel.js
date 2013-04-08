@@ -18,7 +18,7 @@
  */
 ;(function($, undef) {
     $.fn.youtubeChannel = function(settings) {
-        var self = this,
+        var that = this,
             // this plugin's version
             version         = {
                 major: 0,
@@ -88,7 +88,7 @@
             },
             // get the plugin's version
             getVersion  = function() {
-                return [version.major, version.minor, version.build].join('.');
+                return version.major + '.' + version.minor + '.' + version.build;
             },
             // calculate the next set of results to request from the API
             nextSet     = function() {
@@ -118,7 +118,7 @@
                 var m, s = parseInt(secs, 10);
                 m = Math.floor(s / 60);
                 s -= (m * 60);
-                return [m, s].join(':');
+                return m + ':' + s;
             },
             // add a video to the list
             addVideo    = function(vid) {
@@ -179,7 +179,7 @@
                         // done retrieving videos, compile the HTML
                         outputHtml();
                         // use callback, if set
-                        options.callback.apply(self, [api]);
+                        options.callback.apply(that, [api]);
                     }
                 } else {
                     // if no results were returned on the first call...
@@ -190,7 +190,7 @@
                     // we're done here, compile the HTML
                     outputHtml();
                     // use callback, if set
-                    options.callback.apply(self, [api]);
+                    options.callback.apply(that, [api]);
                 }
             };
         /*  -- API FUNCTIONS --  */
@@ -216,7 +216,7 @@
         // start querying the API
         $.getJSON(buildUrl(), parseList);
         // maintain jQuery chainability
-        self.api = api;
-        return this;
+        that.api = api;
+        return that;
     };
 }(jQuery));
