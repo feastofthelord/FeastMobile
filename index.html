@@ -11,7 +11,11 @@
   <script src="js/jquery.mobile-1.1.0.min.js"></script>
   <script src="js/jquery.youtubeChannel.js"></script>
 
-  
+  <style>
+    .ui-page { background: black;}
+  </style>
+
+
   <script language="JavaScript" type="text/javascript" src="contentflow.js"></script>
   <script tyle="text/javascript">
     var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000"});
@@ -49,7 +53,7 @@
           </div>
           <div class="item">
             <img class="content" href="#directions" src="img/map.png"/>
-            <div class="caption">Direction</div>
+            <div class="caption">Directions</div>
           </div>	  
 
           <div class="item">
@@ -83,6 +87,7 @@
       </div> <!-- /footer-->
 
     </div><!--one-->
+  
 
 
 <!--Start of Video Sermons Page: #sermons -->
@@ -91,7 +96,7 @@
     <h1>Sermon Videos</h1>
   </div> <!--/header-->
   
-  <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page Menu</a></p>
+  <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Main Menu</a></p>
   <div data-role="content" data-theme="a">
     <div id="youtube-channel"></div>
     <script>
@@ -129,7 +134,7 @@
 
 </div><!--/sermons page -->
 
-<!-- Start of the About Page -->
+<!-- Start of the About Page: #about -->
 <div data-role="page" id="about" data-theme="a">
   <div data-role="header">
     <h1>About Us</h1>
@@ -144,7 +149,7 @@
   </div><!--/content-->
 </div> <!--/about -->
 
-<!-- Start of the About Page -->
+<!-- Start of the About Pastor Page: #pastorWall -->
 <div data-role="page" id="pastorWall" data-theme="a">
   <div data-role="header">
     <h1>About Us</h1>
@@ -171,14 +176,36 @@
   </div><!--/content-->
 </div> <!--/about -->
 
+<!--Start of Prayer Wall Page: #prayer -->
+<div data-role="page" id="prayer" data-theme="a">
+  <div data-role="header">
+    <h1>Prayer</h1>
+  </div> <!--/header-->
 
+
+  <div data-role="content" data-theme="a">
+    <script type="text/javascript">
+      function addText ( ) {
+      var text = document.getElementById('my_input').value;
+      var ele = document.getElementById('my_text');
+      ele.innerHTML += text + '<br />';
+      }
+    </script>
+    <input type="text" id="name" /> 
+    <input type="button" value="Add" onclick="addText();" />
+    <div id="my_text"></div>
+    
+
+
+      <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Main Menu</a></p>
+  </div><!---/prayer wall -->
 
 
 
 
 
   </div><!-- main content -->
-  <!-- End of Flow ------------------------------->
+
 
 </body>
 </html>
