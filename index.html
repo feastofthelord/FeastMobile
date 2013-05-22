@@ -69,6 +69,11 @@
             <img class="content" src="img/cal.png"/>
             <div class="caption">Calendar of Events</div>
           </div>
+
+	  <div class="item">
+            <img class="content" href="#bible" src="img/bible.png"/>
+            <div class="caption">Bible</div>
+          </div>
                     
 
         </div> <!-- flow-->
@@ -177,8 +182,6 @@
   <div data-role="header">
     <h1>Prayer</h1>
   </div> <!--/header-->
-
-
   <div data-role="content" data-theme="a">
     <script type="text/javascript">
       function addText ( ) {
@@ -189,15 +192,23 @@
     </script>
     <input type="text" id="name" /> 
     <input type="button" value="Add" onclick="addText();" />
-    <div id="my_text"></div>
+    <div id="my_text"></div> 
+    <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Main Menu</a></p>
+  </div><!---/content -->
+</div><!--/prayer wall-->
+
+
+<!--Start of Bible Page: #bible-->
+<div data-role="page" id="bible" data-theme="a">
+  <div data-role="header">
+    <h1>Bible</h1>
+  </div> <!--/header-->
+
+  <div data-role="content" data-theme="a">
     
-
-
-      <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Main Menu</a></p>
-  </div><!---/prayer wall -->
-
-
-
+    
+  </div><!--/content-->
+  </div><!--/bible-->
 
 
   </div><!-- main content -->
