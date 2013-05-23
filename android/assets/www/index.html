@@ -6,13 +6,16 @@
   <link rel="stylesheet" title="Standard" href="css/main.css" type="text/css" />
   <link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
   <link rel="stylesheet" href="css/jquery.youtubeChannel.css" />
+
+  <style>
+    .ui-page { background: black;}
+  </style>
   
 
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="js/jquery-1.7.1.min.js"></script>
   <script src="js/jquery.mobile-1.1.0.min.js"></script>
   <script src="js/jquery.youtubeChannel.js"></script>
-
 
   <script language="JavaScript" type="text/javascript" src="contentflow.js"></script>
   <script tyle="text/javascript">
@@ -64,7 +67,7 @@
             <div class="caption">Prayer Wall</div>
           </div>
           <div class="item">
-            <img class="content" src="img/cal.png"/>
+            <img class="content" href="#calendar" src="img/cal.png"/>
             <div class="caption">Calendar of Events</div>
           </div>
 
@@ -89,20 +92,21 @@
   
 
 
-<!--Start of Video Sermons Page: #sermons -->
-<div data-role="page" id="sermons" data-theme="a">
-  <div data-role="header">
-    <h1>Sermon Videos</h1>
-  </div> <!--/header-->
+    <!--Start of Video Sermons Page: #sermons -->
+    <div data-role="page" id="sermons" data-theme="a">
+      <div data-role="header" data-theme="b"> 
+	      <a href="#one" data-icon="back" data-transition="none">Back</a> 
+	<h1>Sermon Videos</h1>
+      </div> <!--/header-->
   
-  <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Main Menu</a></p>
-  <div data-role="content" data-theme="a">
-    <div id="youtube-channel"></div>
-    <script>
-    var ytc;
-    $(function() {
-        var count = 2;
-        ytc = $('#youtube-channel').youtubeChannel({
+ 
+      <div data-role="content" data-theme="a">
+	<div id="youtube-channel"></div>
+	<script>
+      var ytc;
+      $(function() {
+      var count = 2;
+      ytc = $('#youtube-channel').youtubeChannel({
             username: 'feastofthelord',
             startIndex: 1,
             maxResults: 1000,
@@ -124,146 +128,154 @@
         });
         console.log(ytc.api);
     });
-    </script><!-- /Youtube Channel Grabber -->
-  <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page Menu</a></p>
-  </div> <!--/content-->
-
-  
-
-
-</div><!--/sermons page -->
-
-<!-- Start of the About Page: #about -->
-<div data-role="page" id="about" data-theme="a">
-  <div data-role="header">
-    <h1>About Us</h1>
-  </div> <!--/header-->
-  <div data-role="content" data-theme="a">
-    <p><a href="#about" data-role="button" data-theme="b">About Our Church</a></p>
-    <p><a href="#pastorWall" data-role="button" data-theme="b">About Pastor Wall</a></p>
-    <p><a href="#one" data-role="button" data-theme="b">Main Menu</a></p>
-    <p>The Feast of the Lord, Inc. has been serving the Orangeburg, SC community since October 19, 2003. We are a non-denominational ministry, called to proclaim that deliverance is available by the power of God's Word through the demonstration of the Holy Ghost! Our ministry focus is the salvation of lost souls and imparting the power of God through the anointing of the Holy Spirit that God has graciously blessed us with in abundance.</p>
-
-    <p>The Feast of the Lord is blessed to have the International Fellowship Council of Churches with Bishop E. McDonald Wortham, Ph.D as our apostolic covering. The Lord has blessed our ministry with young prophets who are greatly used by the Holy Spirit in the Word of Knowledge, the Word of Wisdom, Prophecy and other Gifts of the Spirit. Thank you Heavenly Father and to You be all the glory!</p>
-  </div><!--/content-->
-</div> <!--/about -->
-
-<!-- Start of the About Pastor Page: #pastorWall -->
-<div data-role="page" id="pastorWall" data-theme="a">
-  <div data-role="header">
-    <h1>About Us</h1>
-  </div> <!--/header-->
-  <div data-role="content" data-theme="a">
-    <p><a href="#about" data-role="button" data-theme="b">About Our Church</a></p>
-    <p><a href="#pastorWall" data-role="button" data-theme="b">About Pastor Wall</a></p>
-    <p><a href="#one" data-role="button" data-theme="b">Main</a></p>
-    <p>Shane Wall was born and resides in Orangeburg, S. C. He is the founder and pastor of The Feast of the Lord in Orangeburg, SC. He gave his heart to the Lord and was filled with the gift of the Holy Ghost at an early age. He began ministering the Word of God at fifteen. WPJK in Orangeburg approached him about being the Co-Producer of The Days Of Thy Youth radio program. He accepted.</p>
-    <p>Because of his ministry on the radio, invitations came from several churches and organizations for him to minister in their church services. In those and other services, the young and old came to the Lord, received the gift of the Holy Ghost, were delivered and healed spiritually and physically. Shane Wall, 44, has a unique anointing. God uses him to release favor on the lives of people. He has a dynamic teaching ministry that focuses on the revelations the Holy Spirit has given Him about Ecology in the Kingdom of God.</p>
-    <p>Shane Wall is the author of the book, What Are You Doing After the Dance? This book encourages the reader to continue a relationship with God faithfully, even after a desired miracle is received. God has blessed his book to reach International acclaim. Most recently, Pastor Wall released his first Gospel CD entitled, Conversations with God. This project encourages the listener to approach God in prayer in a conversational format. "Prayer is not a speech. Prayer should be a conversation." Each song on the CD (written by Pastor Wall) is either something God is saying to us or something we are saying to God. Local, national and International radio stations have included selections from Conversations with God on their daily playlists.</p>
-
-    <p>Pastor Wall has ministered the in Nassau, Bahamas; Jerusalem, Israel and in Nigeria, Africa.</p>
-    <p>Pastor Shane Wall is dedicated to ministry. Whether the need is one-on-one or international, he has experienced the awesome GLORY of the Lord throughout his over 27 years of ministering the Word of God. He believes, "Life is what God has given me to fulfill my calling." He has also been quoted saying, "I was not created for me; I was created by God to help others. God will take care of my needs."</p>
-    <p>So, why am I ...</p>
-
-    <p>...An Evangelist? God sends me out to minister His Word and to show His love, care and concern all over the world. There are those who need salvation, healing, deliverance and other miracles to take a permanent place in their lives.</p>
-    <p>...A Preacher? God needs those who have sold out to Him and answered His call to declare what He wants the world to know about Him! In fact, some only seek to learn about God's blessings, not His heart.</p>
-
-    <p>...A Prophet? God places me in the presence of a person or a congregation to be His mouthpiece. He trusts me to obey Him and not to take His glory as I walk in this office. He knows that when I open my mouth, I rely fully on Him to speak an accurate Word that is clear in meaning. I use God's wisdom for proper timing in delivering any prophetic Word.</p>
-    <p>...A Pastor? God called me to lead His people as I follow His leading. There are so many precious people who strongly desire to know God's purpose for their individual lives as well as God's purpose for His Church worldwide. As a leader I am to humble myself as a servant of the people that God would give me the anointing that He prepared for me to use while caring for His sheep and lambs. They are the congregation He has positioned me to faithfully lead after His heart.</p>
-
-    <p>I glorify God only for giving me the ability to minister. If the Lord speaks to you that I should come and minister, I look forward to the move of God that we will certainly experience and share together. shane@tfotl.com</p>
-  </div><!--/content-->
-</div> <!--/about -->
-
-<!--Start of Prayer Wall Page: #prayer -->
-<div data-role="page" id="prayer" data-theme="a">
-  <div data-role="header">
-    <h1>Prayer</h1>
-  </div> <!--/header-->
-  <div data-role="content" data-theme="a">
-    <script type="text/javascript">
-      function addText ( ) {
-      var text = document.getElementById('my_input').value;
-      var ele = document.getElementById('my_text');
-      ele.innerHTML += text + '<br />';
-      }
-    </script>
-    <input type="text" id="name" /> 
-    <input type="button" value="Add" onclick="addText();" />
-    <div id="my_text"></div> 
-    <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Main Menu</a></p>
-  </div><!---/content -->
-</div><!--/prayer wall-->
+	</script><!-- /Youtube Channel Grabber -->
+      </div> <!--/content-->
+    </div><!--/sermons page -->
+ 
+    <!-- Start of the About Page: #about -->
+    <div data-role="page" id="about" data-theme="a">
+      <div data-role="header" data-theme="b"> 
+	<a href="#one" data-icon="back" data-transition="none">Back</a> 
+	<h1>About Us</h1>
+      </div> <!--/header-->
+      <div data-role="content" data-theme="a">
+	<p><a href="#aboutChurch" data-role="button" data-theme="b">About Our Church</a></p>
+	<p><a href="#pastorWall" data-role="button" data-theme="b">About Pastor Wall</a></p>
+      </div><!--/content-->
+    </div><!--/about-->
 
 
-<!--Start of Bible Page: #bible-->
-<div data-role="page" id="bible" data-theme="a">
-  <div data-role="header">
-    <h1>Bible</h1>
-  </div> <!--/header-->
+    <!-- Start of the About Church Page: #aboutChurch -->
+    <div data-role="page" id="aboutChurch" data-theme="a">
+      <div data-role="header" data-theme="b"> 
+	<a href="#about" data-icon="back" data-transition="none">Back</a> 
+	<h1>About Our Church</h1>
+      </div><!--/header-->
+      <div data-role="content" data-theme="a">
+
+	<p>The Feast of the Lord, Inc. has been serving the Orangeburg, SC community since October 19, 2003. We are a non-denominational ministry, called to proclaim that deliverance is available by the power of God's Word through the demonstration of the Holy Ghost! Our ministry focus is the salvation of lost souls and imparting the power of God through the anointing of the Holy Spirit that God has graciously blessed us with in abundance.</p>
+
+	<p>The Feast of the Lord is blessed to have the International Fellowship Council of Churches with Bishop E. McDonald Wortham, Ph.D as our apostolic covering. The Lord has blessed our ministry with young prophets who are greatly used by the Holy Spirit in the Word of Knowledge, the Word of Wisdom, Prophecy and other Gifts of the Spirit. Thank you Heavenly Father and to You be all the glory!</p>
+      </div><!--/content-->
+    </div> <!--/about -->
+
+    <!-- Start of the About Pastor Page: #pastorWall -->
+    <div data-role="page" id="pastorWall" data-theme="a">
+      <div data-role="header" data-theme="b"> 
+	<a href="#about" data-icon="back" data-transition="none">Back</a> 
+	<h1>About Us</h1>
+      </div> <!--/header-->
+      <div data-role="content" data-theme="a">
+	<p>Shane Wall was born and resides in Orangeburg, S. C. He is the founder and pastor of The Feast of the Lord in Orangeburg, SC. He gave his heart to the Lord and was filled with the gift of the Holy Ghost at an early age. He began ministering the Word of God at fifteen. WPJK in Orangeburg approached him about being the Co-Producer of The Days Of Thy Youth radio program. He accepted.</p>
+	<p>Because of his ministry on the radio, invitations came from several churches and organizations for him to minister in their church services. In those and other services, the young and old came to the Lord, received the gift of the Holy Ghost, were delivered and healed spiritually and physically. Shane Wall, 44, has a unique anointing. God uses him to release favor on the lives of people. He has a dynamic teaching ministry that focuses on the revelations the Holy Spirit has given Him about Ecology in the Kingdom of God.</p>
+	<p>Shane Wall is the author of the book, What Are You Doing After the Dance? This book encourages the reader to continue a relationship with God faithfully, even after a desired miracle is received. God has blessed his book to reach International acclaim. Most recently, Pastor Wall released his first Gospel CD entitled, Conversations with God. This project encourages the listener to approach God in prayer in a conversational format. "Prayer is not a speech. Prayer should be a conversation." Each song on the CD (written by Pastor Wall) is either something God is saying to us or something we are saying to God. Local, national and International radio stations have included selections from Conversations with God on their daily playlists.</p>
+
+	<p>Pastor Wall has ministered the in Nassau, Bahamas; Jerusalem, Israel and in Nigeria, Africa.</p>
+	<p>Pastor Shane Wall is dedicated to ministry. Whether the need is one-on-one or international, he has experienced the awesome GLORY of the Lord throughout his over 27 years of ministering the Word of God. He believes, "Life is what God has given me to fulfill my calling." He has also been quoted saying, "I was not created for me; I was created by God to help others. God will take care of my needs."</p>
+	<p>So, why am I ...</p>
+
+	<p>...An Evangelist? God sends me out to minister His Word and to show His love, care and concern all over the world. There are those who need salvation, healing, deliverance and other miracles to take a permanent place in their lives.</p>
+	<p>...A Preacher? God needs those who have sold out to Him and answered His call to declare what He wants the world to know about Him! In fact, some only seek to learn about God's blessings, not His heart.</p>
+
+	<p>...A Prophet? God places me in the presence of a person or a congregation to be His mouthpiece. He trusts me to obey Him and not to take His glory as I walk in this office. He knows that when I open my mouth, I rely fully on Him to speak an accurate Word that is clear in meaning. I use God's wisdom for proper timing in delivering any prophetic Word.</p>
+	<p>...A Pastor? God called me to lead His people as I follow His leading. There are so many precious people who strongly desire to know God's purpose for their individual lives as well as God's purpose for His Church worldwide. As a leader I am to humble myself as a servant of the people that God would give me the anointing that He prepared for me to use while caring for His sheep and lambs. They are the congregation He has positioned me to faithfully lead after His heart.</p>
+
+	<p>I glorify God only for giving me the ability to minister. If the Lord speaks to you that I should come and minister, I look forward to the move of God that we will certainly experience and share together. shane@tfotl.com</p>
+      </div><!--/content-->
+    </div> <!--/about P.Wall-->
+
+    <!--Start of Prayer Wall Page: #prayer -->
+    <div data-role="page" id="prayer" data-theme="a">
+      <div data-role="header" data-theme="b"> 
+	<a href="#one" data-icon="back" data-transition="none">Back</a> 
+	<h1>Prayer</h1>
+      </div> <!--/header-->
+      <div data-role="content" data-theme="a">
+	<script type="text/javascript">
+	  function addText ( ) {
+	  var text = document.getElementById('my_input').value;
+	  var ele = document.getElementById('my_text');
+	  ele.innerHTML += text + '<br />';
+	  }
+	</script>
+	<input type="text" id="name" /> 
+	<input type="button" value="Add" onclick="addText();" />
+	<div id="my_text"></div> 
+	<p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Main Menu</a></p>
+      </div><!---/content -->
+    </div><!--/prayer wall-->
 
 
-</div><!--/bible-->
+    <!--Start of Bible Page: #bible-->
+    <div data-role="page" id="bible" data-theme="a">
+      <div data-role="header" data-theme="b"> 
+      	<a href="#one" data-icon="back" data-transition="none">Back</a> 
+	<h1>Bible</h1>
+      </div> <!--/header-->
+
+
+    </div><!--/bible-->
 
 
 
 
-<!--Start of Directions Page: #gmap-->
+    <!--Start of Directions Page: #gmap-->
+    <div data-role="page" id="gmap"> 
+      <div data-role="header" data-theme="b"> 
+	<a href="#one" data-icon="back" data-transition="none">Back</a> 
+	<h1>Find Us!</h1> 
+      </div> <!--/header-->
 
-<div data-role="page" id="gmap"> 
-  <div data-role="header" data-theme="b"> 
-    <a href="#map" data-icon="back" data-transition="none">Back</a> 
-    <h1>Google Map</h1> 
-  </div> <!--/header-->
+      <div data-role="content" data-theme="a">
+	<p>The Feast of the Lord is located at 290 Broughton St. Orangeburg, SC 29115</p>
+	<a href="javascript:document.location.href=openMap();"  data-role="button">View in Map</a>
 
-  <div data-role="content" data-theme="a">
-    <script>
-      var isMobile = {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
-};
+	<script>
+	  function openMap()
+	  {
+	  if(navigator.userAgent.match(/Android/i))
+          {
+          return "geo:33.479661,-80.855462"
+          }
+	  }
 
-      if(isMobile.iOS())
-      {
-      window.location.replace = ('http://maps.apple.com/?q=cupertino')
+	  if(navigator.userAgent.match(/iPhone|iPad|iPod/i))
+	  {
+          return "http://maps.apple.com/?q=33.479661,-80.855462"
 
-      }
+	  }
 
-      else if (isMobile.Android())
-      {
-
-      window.location.replace = ('geo:33.624497,-80.926614')
-
-      }
-
-      else
-      {
-      window.location.replace = ('geo:33.624497,-80.926614')
-
-      }
-
-    </script>
+	</script>
 
 
-       
-  </div> <!-- /content-->
-</div> <!--/gmap-->
+	
+      </div> <!-- /content-->
+    </div> <!--/gmap-->
+
+    <!--Start of Support Page: #support-->
+    <div data-role="page" id="support"> 
+      <div data-role="header" data-theme="b"> 
+	<a href="#one" data-icon="back" data-transition="none">Back</a> 
+	<h1>Donate</h1> 
+      </div> <!--/header-->
+
+      <div data-role="content" data-theme="a">
+	<p> Content place holder</p>
+      </div><!-- /content-->
+    </div><!-- /support -->
+
+    <!--Start of Calendar Page: #calendar-->
+    <div data-role="page" id="calendar"> 
+      <div data-role="header" data-theme="b"> 
+	<a href="#one" data-icon="back" data-transition="none">Back</a> 
+	<h1>Calendar</h1> 
+      </div> <!--/header-->
+
+      <div data-role="content" data-theme="a">
+	<p> Content place holder</p>
+      </div><!-- /content-->
+    </div><!--/calendar-->
+
 
 
 </body>
