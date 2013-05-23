@@ -6,14 +6,12 @@
   <link rel="stylesheet" title="Standard" href="css/main.css" type="text/css" />
   <link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
   <link rel="stylesheet" href="css/jquery.youtubeChannel.css" />
+  
 
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="js/jquery-1.7.1.min.js"></script>
   <script src="js/jquery.mobile-1.1.0.min.js"></script>
   <script src="js/jquery.youtubeChannel.js"></script>
-
-  <style>
-    .ui-page { background: black;}
-  </style>
 
 
   <script language="JavaScript" type="text/javascript" src="contentflow.js"></script>
@@ -52,7 +50,7 @@
             <div class="caption">About Us</div>
           </div>
           <div class="item">
-            <img class="content" href="#directions" src="img/map.png"/>
+            <img class="content" href="#gmap" src="img/map.png"/>
             <div class="caption">Directions</div>
           </div>	  
 
@@ -204,14 +202,68 @@
     <h1>Bible</h1>
   </div> <!--/header-->
 
+
+</div><!--/bible-->
+
+
+
+
+<!--Start of Directions Page: #gmap-->
+
+<div data-role="page" id="gmap"> 
+  <div data-role="header" data-theme="b"> 
+    <a href="#map" data-icon="back" data-transition="none">Back</a> 
+    <h1>Google Map</h1> 
+  </div> <!--/header-->
+
   <div data-role="content" data-theme="a">
-    
-    
-  </div><!--/content-->
-  </div><!--/bible-->
+    <script>
+      var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+      if(isMobile.iOS())
+      {
+      window.location.replace = ('http://maps.apple.com/?q=cupertino')
+
+      }
+
+      else if (isMobile.Android())
+      {
+
+      window.location.replace = ('geo:33.624497,-80.926614')
+
+      }
+
+      else
+      {
+      window.location.replace = ('geo:33.624497,-80.926614')
+
+      }
+
+    </script>
 
 
-  </div><!-- main content -->
+       
+  </div> <!-- /content-->
+</div> <!--/gmap-->
 
 
 </body>
