@@ -1,0 +1,23 @@
+/home/eddiem3/development/FeastMobile/android/gen/com/TheFeastOfTheLord/FeastMobile/R.java \
+ : /home/eddiem3/development/FeastMobile/android/res/drawable/icon.png \
+/home/eddiem3/development/FeastMobile/android/res/drawable-xhdpi/ic_launcher.png \
+/home/eddiem3/development/FeastMobile/android/res/drawable-xhdpi/icon.png \
+/home/eddiem3/development/FeastMobile/android/res/xml/config.xml \
+/home/eddiem3/development/FeastMobile/android/res/drawable-mdpi/ic_launcher.png \
+/home/eddiem3/development/FeastMobile/android/res/drawable-mdpi/icon.png \
+/home/eddiem3/development/FeastMobile/android/res/layout/main.xml \
+/home/eddiem3/development/FeastMobile/android/res/drawable-ldpi/ic_launcher.png \
+/home/eddiem3/development/FeastMobile/android/res/drawable-ldpi/icon.png \
+/home/eddiem3/development/FeastMobile/android/res/values/strings.xml \
+/home/eddiem3/development/FeastMobile/android/res/drawable-hdpi/ic_launcher.png \
+/home/eddiem3/development/FeastMobile/android/res/drawable-hdpi/icon.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable/icon.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable-xhdpi/ic_launcher.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable-xhdpi/icon.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable-mdpi/ic_launcher.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable-mdpi/icon.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable-ldpi/ic_launcher.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable-ldpi/icon.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable-hdpi/ic_launcher.png \
+/home/eddiem3/development/FeastMobile/android/bin/res/drawable-hdpi/icon.png \
+/home/eddiem3/development/FeastMobile/android/bin/AndroidManifest.xml \
