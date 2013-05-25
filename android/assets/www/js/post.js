@@ -1,5 +1,6 @@
 $(document).bind('deviceready', function(){
     $(function(){
+	$.mobile.allowCrossDomainPages = true;
         $('form').submit(function(){
             var landmarkID = $(this).parent().attr('data-landmark-id');
             var postData = $(this).serialize();
