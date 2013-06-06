@@ -17,6 +17,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="js/post.js"></script>
   <script src="js/jquery.jsbible.min.js"></script>
+  <script src="js/jquery.youtubeChannel.js"></script>
 
 
   <!--Cordova Initalization -->
@@ -113,11 +114,11 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
           <div class="slider"><div class="position"></div></div>
         </div> <!--scrollbar-->
       </div><!--/content flow-->
-
+      
       <div data-role="footer" data-theme="d">
 	<h4>The Feast of the Lord</h4>
       </div> <!-- /footer-->
-
+      
     </div><!--one-->
   
 
@@ -125,7 +126,7 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
     <!--Start of Video Sermons Page: #sermons -->
     <div data-role="page" id="sermons" data-theme="a">
       <div data-role="header" data-theme="b"> 
-	      <a href="#one" data-icon="back" data-transition="none">Back</a> 
+	<a href="#one" data-icon="back" data-transition="none">Back</a> 
 	<h1>Sermon Videos</h1>
       </div> <!--/header-->
   
@@ -133,10 +134,10 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
       <div data-role="content" data-theme="a">
 	<div id="youtube-channel"></div>
 	<script>
-      var ytc;
-      $(function() {
-      var count = 2;
-      ytc = $('#youtube-channel').youtubeChannel({
+	  var ytc;
+	  $(function() {
+	  var count = 2;
+	  ytc = $('#youtube-channel').youtubeChannel({
             username: 'feastofthelord',
             startIndex: 1,
             maxResults: 1000,
