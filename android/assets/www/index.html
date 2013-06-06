@@ -6,14 +6,18 @@
   <link rel="stylesheet" title="Standard" href="css/main.css" type="text/css" />
   <link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
   <link rel="stylesheet" href="css/jquery.youtubeChannel.css" />
+  <link href="css/jsbible.css" rel="stylesheet" media="screen, handheld" />
 
-  <script src="js/jquery-1.7.1.min.js"></script>
+
+  <!--<script src="js/jquery-1.7.1.min.js"></script>-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="js/jquery.mobile-1.1.0.min.js"></script>
   <script src="js/jquery.cordova-1.5.0-android.js"></script>
   <script src="js/cordova-1.5.0.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="js/post.js"></script>
-  <script src="js/ABSBiblesearch.js"></script>
+  <script src="js/jquery.jsbible.min.js"></script>
+
 
   <!--Cordova Initalization -->
   <script>
@@ -28,6 +32,18 @@
   <style>
     .ui-page { background: black;}
   </style>
+
+  <!--Bible -->
+  <div data-role="content" data-theme="a">
+	<script type="text/javascript">
+  $("document").ready(function(){
+  $(".jsbible").jsbible({
+api: "29de4157542f3df7ed96b09b6f5d0c47"
+});
+});
+</script>
+
+
 
 
   
@@ -238,36 +254,10 @@
       	<a href="#one" data-icon="back" data-transition="none">Back</a> 
 	<h1>Bible</h1>
       </div> <!--/header-->
- <div data-role="content" data-theme="a">
-
-<script>
-function getVersions()
-{
-var bsearch = plugins.absBiblesearch; // just to make access easier.
-bsearch.setKey(t1gka87pSJrjJM7Mkv7FaOg2IL23wyqCW3rvUYQg); // just do this once in your app initialization
-
-// at this point you are ready to make api calls.
-if (!bsearch.versionsByLanguage('eng-US', function(data) {
-    // data will now contain a JSON object.  To see an example of the content see the api documentation.
-    for (var i = 0; i < data.response.versions.length; i++) {
-        var version = data.response.versions[i];
-        alert(version.version + ': ' + version.name);
-    }    
-})) {
-    alert('error: ' + bsearch.lastError());
-}
-}
-</script>
-<input type="button" onclick="getVersions()" value="Print Versionsx">
- </div><!--/content-->
-
-
- 
-
-
-
-
-
+      
+      <div data-role="content" data-theme="a">
+	<div class="jsbible"></div>
+      </div><!--/content-->
     </div><!--/bible-->
 
 
