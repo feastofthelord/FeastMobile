@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" title="Standard" href="css/main.css" type="text/css" />
   <link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
-  <link rel="stylesheet" href="css/jquery.youtubeChannel.css" />
   <link href="css/jsbible.css" rel="stylesheet" media="screen, handheld" />
 
 
@@ -17,7 +16,21 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="js/post.js"></script>
   <script src="js/jquery.jsbible.min.js"></script>
-  <script src="js/jquery.youtubeChannel.js"></script>
+
+
+    <!-- Include the youtube playlist files. -->
+    <script type='text/javascript' src='js/youtube.display.js'></script>
+    <script type='text/javascript' src='js/youtube.playlist.js'></script>
+    <script type='text/javascript' src='js/youtube.teaser.js'></script>
+    <script type='text/javascript' src='js/youtube_playlist.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.youtube-playlist').youtube_playlist({
+          playlist: 'https://gdata.youtube.com/feeds/api/videos?author=feastofthelord&max-results=50&orderby=published&format=1&alt=json',
+          width: '800px'
+        });
+      });
+    </script>
 
 
   <!--Cordova Initalization -->
@@ -45,84 +58,6 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
 </script>
 
 
-
-
-  
-  <script language="JavaScript" type="text/javascript" src="contentflow.js"></script>
-  <script tyle="text/javascript">
-    var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000"});
-  </script>
-  <!--/UI Settings -->
-</head>
-
-<body onload="onBodyLoad()">
-  
-  <div class="maincontent">
-    
-    <div data-role="page" id="one">
-
-
-       <div data-role="header">
-                <h1>The Feast of the Lord</h1>
-        </div><!-- /header -->
-
-       
-      <!-- ===== FLOW ===== -->
-      <div id="contentFlow" class="ContentFlow">
-        <!-- should be place before flow so that contained images will be loaded first -->
-        <div class="loadIndicator"><div class="indicator"></div></div>
-
-        <div class="flow">
-	  
-	  
-          <div class="item">
-	    <img class="content" href="#support" src="img/don.png"/>
-            <div class="caption">Support Our Ministry</div>
-          </div>
-          <div class="item">
-            <img class="content" href="#about" src="img/logo.png"/>
-            <div class="caption">About Us</div>
-          </div>
-          <div class="item">
-            <img class="content" href="#gmap" src="img/map.png"/>
-            <div class="caption">Directions</div>
-          </div>	  
-
-          <div class="item">
-            <img class="content" href="#sermons" src="img/vid.png"/>
-            <div class="caption">Video Sermons</div>
-          </div>
-
-          <div class="item">
-            <img class="content" href="#prayer" src="img/pra.png"/>
-            <div class="caption">Prayer Wall</div>
-          </div>
-          <div class="item">
-            <img class="content" href="#calendar" src="img/cal.png"/>
-            <div class="caption">Calendar of Events</div>
-          </div>
-
-	  <div class="item">
-            <img class="content" href="#bible" src="img/bible.png"/>
-            <div class="caption">Bible</div>
-          </div>
-                    
-
-        </div> <!-- flow-->
-        <div class="globalCaption"></div>
-        <div class="scrollbar">
-          <div class="slider"><div class="position"></div></div>
-        </div> <!--scrollbar-->
-      </div><!--/content flow-->
-      
-      <div data-role="footer" data-theme="d">
-	<h4>The Feast of the Lord</h4>
-      </div> <!-- /footer-->
-      
-    </div><!--one-->
-  
-
-
     <!--Start of Video Sermons Page: #sermons -->
     <div data-role="page" id="sermons" data-theme="a">
       <div data-role="header" data-theme="b"> 
@@ -132,34 +67,9 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
   
  
       <div data-role="content" data-theme="a">
-	<div id="youtube-channel"></div>
-	<script>
-	  var ytc;
-	  $(function() {
-	  var count = 2;
-	  ytc = $('#youtube-channel').youtubeChannel({
-            username: 'feastofthelord',
-            startIndex: 1,
-            maxResults: 1000,
-            orderBy: 'published',
-            callback: function(api) {
-                // check if plugin failed to load any videos
-                if (!api.failed) {
-                    // log the number of videos loaded so far
-                    console.log('loaded ' + api.videoCount + ' videos');
-                    // execute two more loads asynchronously
-                    if (count--) {
-                        // add some delay, just because :)
-                        setTimeout(function() {
-                            api.loadMore(10);
-                        }, 1000);
-                    }
-                }
-            }
-        });
-        console.log(ytc.api);
-    });
-	</script><!-- /Youtube Channel Grabber -->
+	<div class="youtube-playlist"></div>
+      </div>
+
       </div> <!--/content-->
     </div><!--/sermons page -->
  
@@ -320,6 +230,17 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
 	<p> Content place holder</p>
       </div><!-- /content-->
     </div><!--/calendar-->
+
+<div data-role="footer" data-id="foo1" data-position="fixed">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="a.html">Info</a></li>
+      <li><a href="b.html">Friends</a></li>
+      <li><a href="c.html">Albums</a></li>
+      <li><a href="d.html">Emails</a></li>
+      </ul>
+    </div><!-- /navbar -->
+</div><!-- /footer -->
 
 
 
