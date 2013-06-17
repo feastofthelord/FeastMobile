@@ -34,7 +34,7 @@ youtube.playlist.prototype.init = function(options) {
         item = data.feed.entry[index];
         new youtube.teaser(playlist.context, {
           title: item.title.$t,
-          description: item.content.$t,
+            //description: item.content.$t,*
           thumbnail: item.media$group.media$thumbnail[1].url,
           link: item.link[0].href
         });
