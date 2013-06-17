@@ -61,28 +61,45 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
     <!--Start of Video Sermons Page: #sermons -->
     <div data-role="page" id="sermons" data-theme="a">
       <div data-role="header" data-theme="b"> 
-	<a href="#one" data-icon="back" data-transition="none">Back</a> 
 	<h1>Sermon Videos</h1>
       </div> <!--/header-->
   
  
       <div data-role="content" data-theme="a">
 	<div class="youtube-playlist"></div>
-      </div>
+      </div><!--/contenr-->
 
-      </div> <!--/content-->
+      <div data-role="footer" data-id="nav" data-position="fixed">
+	<div data-role="navbar">
+          <ul>
+            <li><a href="#sermons">Sermons</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#donate">Donate</a></li>
+          </ul>
+      </div><!-- /navbar -->
+      </div><!-- /footer -->
     </div><!--/sermons page -->
- 
+    
     <!-- Start of the About Page: #about -->
     <div data-role="page" id="about" data-theme="a">
       <div data-role="header" data-theme="b"> 
-	<a href="#one" data-icon="back" data-transition="none">Back</a> 
 	<h1>About Us</h1>
       </div> <!--/header-->
       <div data-role="content" data-theme="a">
 	<p><a href="#aboutChurch" data-role="button" data-theme="b">About Our Church</a></p>
 	<p><a href="#pastorWall" data-role="button" data-theme="b">About Pastor Wall</a></p>
       </div><!--/content-->
+      <div data-role="footer" data-id="nav" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#sermons">Sermons</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#donate">Donate</a></li>
+          </ul>
+        </div><!-- /navbar -->
+      </div><!-- /footer -->
     </div><!--/about-->
 
 
@@ -90,16 +107,27 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
     <div data-role="page" id="aboutChurch" data-theme="a">
       <div data-role="header" data-theme="b"> 
 	<a href="#about" data-icon="back" data-transition="none">Back</a> 
+
 	<h1>About Our Church</h1>
       </div><!--/header-->
       <div data-role="content" data-theme="a">
-
+	
 	<p>The Feast of the Lord, Inc. has been serving the Orangeburg, SC community since October 19, 2003. We are a non-denominational ministry, called to proclaim that deliverance is available by the power of God's Word through the demonstration of the Holy Ghost! Our ministry focus is the salvation of lost souls and imparting the power of God through the anointing of the Holy Spirit that God has graciously blessed us with in abundance.</p>
 
 	<p>The Feast of the Lord is blessed to have the International Fellowship Council of Churches with Bishop E. McDonald Wortham, Ph.D as our apostolic covering. The Lord has blessed our ministry with young prophets who are greatly used by the Holy Spirit in the Word of Knowledge, the Word of Wisdom, Prophecy and other Gifts of the Spirit. Thank you Heavenly Father and to You be all the glory!</p>
       </div><!--/content-->
+      <div data-role="footer" data-id="nav" data-position="fixed">
+	<div data-role="navbar">
+          <ul>
+            <li><a href="#sermons">Sermons</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#donate">Donate</a></li>
+          </ul>
+        </div><!-- /navbar -->
+      </div><!-- /footer -->
     </div> <!--/about -->
-
+    
     <!-- Start of the About Pastor Page: #pastorWall -->
     <div data-role="page" id="pastorWall" data-theme="a">
       <div data-role="header" data-theme="b"> 
@@ -123,40 +151,18 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
 
 	<p>I glorify God only for giving me the ability to minister. If the Lord speaks to you that I should come and minister, I look forward to the move of God that we will certainly experience and share together. shane@tfotl.com</p>
       </div><!--/content-->
+
+<div data-role="footer" data-id="nav" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#sermons">Sermons</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#donate">Donate</a></li>
+        </ul>
+        </div><!-- /navbar -->
+      </div><!-- /footer -->
     </div> <!--/about P.Wall-->
-
-    <!--Start of Prayer Wall Page: #prayer -->
-    <div data-role="page" id="prayer" data-theme="a">
-      <div data-role="header" data-theme="b"> 
-	<a href="#one" data-icon="back" data-transition="none">Back</a> 
-	<h1>Submit a Prayer Request</h1>
-      </div> <!--/header-->
-      <div data-role="content" data-theme="a">
-	<div id="landmark-1" data-landmark-id="1">
-	  <form>
-	    
-	    <label for="name">
-	      <b>Name</b>
-	      <input type="text" id="name" name="email">
-	    </label>
-
-	    <label for="email">
-	      <b>Email</b>
-	      <input type="email" id="email" name="email">
-	    </label>
-
-	    <label for="comment">
-	      <b>Prayer Request</b>
-	      <textarea id="prayerRequest" name="prayerRequest" cols="30" rows="10"></textarea>
-	    </label>
-	    
-	    <input type="submit" value="Add Request">
-	    
-	  </form>
-	</div><!--/prayer-1 -->
-
-      </div><!---/content -->
-    </div><!--/prayer wall-->
 
 
     <!--Start of Bible Page: #bible-->
@@ -169,13 +175,24 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
       <div data-role="content" data-theme="a">
 	<div class="jsbible"></div>
       </div><!--/content-->
+      <div data-role="footer" data-id="nav" data-position="fixed">
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="#sermons">Sermons</a></li>
+	    <li><a href="#map">Map</a></li>
+	    <li><a href="#about">About</a></li>
+	    <li><a href="#donate">Donate</a></li>
+	  </ul>
+	</div><!-- /navbar -->
+      </div><!-- /footer -->
+      
     </div><!--/bible-->
 
 
 
 
-    <!--Start of Directions Page: #gmap-->
-    <div data-role="page" id="gmap"> 
+    <!--Start of Directions Page: #map-->
+    <div data-role="page" id="map"> 
       <div data-role="header" data-theme="b"> 
 	<a href="#one" data-icon="back" data-transition="none">Back</a> 
 	<h1>Find Us!</h1> 
@@ -207,8 +224,8 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
       </div> <!-- /content-->
     </div> <!--/gmap-->
 
-    <!--Start of Support Page: #support-->
-    <div data-role="page" id="support"> 
+    <!--Start of Support Page: #donate-->
+    <div data-role="page" id="donate"> 
       <div data-role="header" data-theme="b"> 
 	<a href="#one" data-icon="back" data-transition="none">Back</a> 
 	<h1>Donate</h1> 
@@ -217,31 +234,18 @@ api: "29de4157542f3df7ed96b09b6f5d0c47"
       <div data-role="content" data-theme="a">
 	<p> Content place holder</p>
       </div><!-- /content-->
+      <div data-role="footer" data-id="nav" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#sermons">Sermons</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#donate">Donate</a></li>
+          </ul>
+        </div><!-- /navbar -->
+      </div><!-- /footer -->
+      
     </div><!-- /support -->
-
-    <!--Start of Calendar Page: #calendar-->
-    <div data-role="page" id="calendar"> 
-      <div data-role="header" data-theme="b"> 
-	<a href="#one" data-icon="back" data-transition="none">Back</a> 
-	<h1>Calendar</h1> 
-      </div> <!--/header-->
-
-      <div data-role="content" data-theme="a">
-	<p> Content place holder</p>
-      </div><!-- /content-->
-    </div><!--/calendar-->
-
-<div data-role="footer" data-id="foo1" data-position="fixed">
-  <div data-role="navbar">
-    <ul>
-      <li><a href="a.html">Info</a></li>
-      <li><a href="b.html">Friends</a></li>
-      <li><a href="c.html">Albums</a></li>
-      <li><a href="d.html">Emails</a></li>
-      </ul>
-    </div><!-- /navbar -->
-</div><!-- /footer -->
-
 
 
 </body>
